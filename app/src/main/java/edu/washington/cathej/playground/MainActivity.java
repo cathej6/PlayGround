@@ -32,14 +32,23 @@ public class MainActivity extends Activity {
             startActivity(intent);
         }
 
-        Button button = (Button) findViewById(R.id.button);
-
-        button.setOnClickListener(new View.OnClickListener() {
+        // Goes to Parent Mode
+        Button pModeButton = (Button) findViewById(R.id.pMode);
+        pModeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.i("button", "Text updated.");
                 Intent intent = new Intent(MainActivity.this, ParentActivity.class);
                 MainActivity.this.startActivity(intent);
+            }
+        });
+
+        // Goes to Child Mode
+        Button cModeButton = (Button) findViewById(R.id.cMode);
+        cModeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("button", "Text updated.");
             }
         });
     }
