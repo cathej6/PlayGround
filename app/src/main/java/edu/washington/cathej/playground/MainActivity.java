@@ -6,8 +6,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+//import com.facebook.AccessToken;
+//import com.facebook.Profile;
+//import com.facebook.ProfileTracker;
 
 public class MainActivity extends Activity {
+
+    //private AccessToken userToken = AccessToken.getCurrentAccessToken();
+    //private ProfileTracker profileTracker;
+    //private Profile userProfile = Profile.getCurrentProfile();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +22,11 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         Button button = (Button) findViewById(R.id.button);
+
+        /*if (!this.isLoggedIn()) {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+        }*/
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,5 +36,9 @@ public class MainActivity extends Activity {
                 MainActivity.this.startActivity(intent);
             }
         });
+    }
+
+    public boolean isLoggedIn() {
+        return true;
     }
 }
