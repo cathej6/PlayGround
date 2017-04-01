@@ -3,4 +3,5 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_parent">ParentActivity</string>
     <string name="title_activity_child">ChildActivity</string>
+    <string name="title_activity_preferences">PreferencesActivity</string>
 </resources>

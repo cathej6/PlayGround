@@ -4,8 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import static android.os.Build.VERSION_CODES.M;
 
 public class ParentActivity extends Activity {
 
@@ -26,4 +31,31 @@ public class ParentActivity extends Activity {
         });
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        //inflater.inflate(R.menu.menu_math_overview, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    /*
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Take appropriate action for each action item click
+        switch (item.getItemId()) {
+            case R.id.action_preferences:
+                // search action
+                goToPreferences();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void goToPreferences() {
+        Intent intent = new Intent(ParentActivity.this, PreferencesActivity.class);
+        ParentActivity.this.startActivity(intent);
+    }
+    */
 }

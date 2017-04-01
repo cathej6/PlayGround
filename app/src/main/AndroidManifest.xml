@@ -24,7 +24,10 @@
             android:label="@string/title_activity_parent" />
         <activity
             android:name=".ChildActivity"
-            android:label="@string/title_activity_child"></activity>
+            android:label="@string/title_activity_child" />
+        <activity
+            android:name=".PreferencesActivity"
+            android:label="@string/title_activity_preferences"></activity>
     </application>
 
 </manifest>
