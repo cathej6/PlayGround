@@ -5,12 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="edu.washington.cathej.playground.LoginActivity">
+    android:background="#a0cb3d"
+    tools:context="edu.washington.cathej.playground.LoginActivity"
+    android:weightSum="1">
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
 
     <TextView
         android:id="@+id/label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
         android:text="Email" />
 
     <EditText
@@ -22,8 +36,10 @@
 
     <TextView
         android:id="@+id/label2"
+        android:textColor="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="20dp"
         android:text="Password" />
 
     <EditText
@@ -33,23 +49,75 @@
         android:text=""
         android:inputType="textPassword" />
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="18dp"
+        android:gravity="right"
+        android:text="Forget your password?" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
         android:text="Login"
+        android:background="#babdbc"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
         tools:layout_editor_absoluteX="154dp"
         tools:layout_editor_absoluteY="214dp" />
+
     <Space
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="20dp" />
 
     <Button
         android:id="@+id/buttonF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Facebook"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:text="Log in with Facebook"
+        android:background="#3b5998"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
         tools:layout_editor_absoluteX="154dp"
         tools:layout_editor_absoluteY="214dp" />
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <Button
+        android:text="Log in with Google"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:textColor="#ffffff"
+        android:background="#db3236"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonG" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="18dp"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:text="Start your journey now!" />
 </LinearLayout>
