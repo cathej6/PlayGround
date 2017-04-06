@@ -12,18 +12,14 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="20dp" />
 
 
     <ImageView
-        android:src="@drawable/whiteicon-07"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView" />
-
-    <Space
+        android:src="@drawable/whiteicon"
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2" />
 
     <TextView
         android:id="@+id/label"
