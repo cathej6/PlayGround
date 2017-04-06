@@ -6,17 +6,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-//import com.facebook.AccessToken;
-//import com.facebook.Profile;
-//import com.facebook.ProfileTracker;
 
 public class MainActivity extends Activity {
 
-    //private AccessToken userToken = AccessToken.getCurrentAccessToken();
-    //private ProfileTracker profileTracker;
-    //private Profile userProfile = Profile.getCurrentProfile();
     private SharedPreferences sharedPreferences;
     private boolean loggedIn;
 
@@ -27,6 +24,9 @@ public class MainActivity extends Activity {
 
         sharedPreferences = getSharedPreferences("playGroundPref", Context.MODE_PRIVATE);
         loggedIn = sharedPreferences.getBoolean("loggedIn", false);
+
+        Log.i("loggin", "loggedIn bool: " + loggedIn);
+
         if (!loggedIn) {
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
@@ -49,7 +49,10 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Log.i("button", "Text updated.");
+                Intent intent = new Intent(MainActivity.this, ChildActivity.class);
+                MainActivity.this.startActivity(intent);
             }
         });
     }
+
 }

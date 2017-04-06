@@ -28,6 +28,9 @@ public class LoginActivity extends Activity {
                 Log.i("button", "Text updated.");
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean("loggedIn", true);
+                editor.commit();
+                Log.i("loggin", "User logged in.");
+
 
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 LoginActivity.this.startActivity(intent);

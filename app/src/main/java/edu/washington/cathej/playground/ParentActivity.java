@@ -34,12 +34,14 @@ public class ParentActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        //inflater.inflate(R.menu.menu_math_overview, menu);
+        inflater.inflate(R.menu.menu_parent, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
 
-    /*
+    /**
+     * On selecting action bar icons
+     * */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Take appropriate action for each action item click
@@ -57,5 +59,4 @@ public class ParentActivity extends Activity {
         Intent intent = new Intent(ParentActivity.this, PreferencesActivity.class);
         ParentActivity.this.startActivity(intent);
     }
-    */
 }
