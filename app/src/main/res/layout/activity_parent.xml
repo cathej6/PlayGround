@@ -9,6 +9,7 @@
     tools:context="edu.washington.cathej.playground.ParentActivity">
 
     <TabHost
+        android:id="@+id/tabHost"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -108,7 +109,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Don't Lie"/>
+                        android:text="lawww!"/>
 
                     <TableLayout
                         android:layout_width="match_parent"
@@ -180,7 +181,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Don't Lie"/>
+                        android:text="Blah"/>
 
                     <TableLayout
                         android:layout_width="match_parent"

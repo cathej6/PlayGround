@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TabHost;
 
 import static android.os.Build.VERSION_CODES.M;
 
@@ -18,44 +19,61 @@ public class ParentActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parent);
+        TabHost host = (TabHost)findViewById(R.id.tabHost);
+        host.setup();
 
-        Button button = (Button) findViewById(R.id.button);
+        //Tab 1
+        TabHost.TabSpec spec = host.newTabSpec("Tab One");
+        spec.setContent(R.id.tab1);
+        spec.setIndicator("Ben");
+        host.addTab(spec);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.i("button", "Text updated.");
-                Intent intent = new Intent(ParentActivity.this, MainActivity.class);
-                ParentActivity.this.startActivity(intent);
-            }
-        });
+        //Tab 2
+        spec = host.newTabSpec("Tab Two");
+        spec.setContent(R.id.tab2);
+        spec.setIndicator("Jen");
+        host.addTab(spec);
+
+        //Tab 3
+        spec = host.newTabSpec("Tab Three");
+        spec.setContent(R.id.tab3);
+        spec.setIndicator("Fred");
+        host.addTab(spec);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_parent, menu);
-
-        return super.onCreateOptionsMenu(menu);
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_parent_tabs, menu);
+        return true;
     }
 
-    /**
-     * On selecting action bar icons
-     * */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Take appropriate action for each action item click
-        switch (item.getItemId()) {
-            case R.id.action_preferences:
-                // search action
-                goToPreferences();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        } else if (id == R.id.action_email_password) {
+            goToPreferences("email_password");
+            return true;
+        } else if (id == R.id.action_childs_profile) {
+            goToPreferences("childs_profile");
+            return true;
+        } else if (id == R.id.action_pin) {
+            goToPreferences("pin");
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
         }
     }
 
-    public void goToPreferences() {
+
+    public void goToPreferences(String mode) {
         Intent intent = new Intent(ParentActivity.this, PreferencesActivity.class);
         ParentActivity.this.startActivity(intent);
     }
