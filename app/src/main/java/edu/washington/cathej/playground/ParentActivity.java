@@ -44,7 +44,7 @@ public class ParentActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_parent_tabs, menu);
+        getMenuInflater().inflate(R.menu.menu_parent, menu);
         return true;
     }
 
@@ -56,9 +56,7 @@ public class ParentActivity extends Activity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        } else if (id == R.id.action_email_password) {
+        if (id == R.id.action_email_password) {
             goToPreferences("email_password");
             return true;
         } else if (id == R.id.action_childs_profile) {
@@ -75,6 +73,7 @@ public class ParentActivity extends Activity {
 
     public void goToPreferences(String mode) {
         Intent intent = new Intent(ParentActivity.this, PreferencesActivity.class);
+        intent.putExtra("mode", mode);
         ParentActivity.this.startActivity(intent);
     }
 }
