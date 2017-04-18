@@ -38,7 +38,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Log.i("button", "Text updated.");
-                Intent intent = new Intent(MainActivity.this, ParentActivity.class);
+                Intent intent = new Intent(MainActivity.this, PinActivity.class);
                 MainActivity.this.startActivity(intent);
             }
         });
