@@ -12,9 +12,6 @@ import static android.R.attr.id;
 
 public class PreferencesActivity extends Activity {
 
-    private ChangePinFragment changePinFragment;
-    private ChildProfileFragment childProfileFragment;
-    private EmailPasswordFragment emailPasswordFragment;
     private String mode;
 
 
