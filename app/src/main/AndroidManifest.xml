@@ -23,14 +23,17 @@
             android:name=".ParentActivity"
             android:label="@string/title_activity_parent" />
         <activity
-            android:name=".ChildActivity"
-            android:label="@string/title_activity_child" />
-        <activity
             android:name=".PreferencesActivity"
             android:label="@string/title_activity_preferences" />
         <activity
             android:name=".PinActivity"
-            android:label="@string/title_activity_pin"></activity>
+            android:label="@string/title_activity_pin" />
+        <activity
+            android:name=".MapActivity"
+            android:label="@string/title_activity_map" />
+        <activity
+            android:name=".StoryActivity"
+            android:label="@string/title_activity_story"></activity>
     </application>
 
 </manifest>
