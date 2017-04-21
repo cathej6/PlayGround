@@ -10,6 +10,7 @@
 
     <TabHost
         android:id="@+id/tabHost"
+        android:textColor="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -37,6 +38,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#ffffff"
                         android:text="Don't Lie"/>
 
                     <TableLayout
@@ -60,6 +62,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#ffffff"
                         android:text="Help others"/>
 
                     <TableLayout
@@ -82,22 +85,26 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#ffffff"
                         android:text="Skills to integrate"/>
 
                     <CheckBox
                         android:id="@+id/checkBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#ffffff"
                         android:text="Be Brave" />
                     <CheckBox
                         android:id="@+id/checkBox1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#ffffff"
                         android:text="Possitivity" />
                     <CheckBox
                         android:id="@+id/checkBox2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#ffffff"
                         android:text="Listen to others" />
                 </LinearLayout>
 
