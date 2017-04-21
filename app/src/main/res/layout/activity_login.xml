@@ -19,6 +19,8 @@
         android:src="@drawable/whiteicon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:id="@+id/imageView2" />
 
     <TextView
@@ -26,6 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#ffffff"
+        android:layout_marginLeft="20dp"
         android:textSize="20dp"
         android:text="Email" />
 
@@ -33,6 +36,8 @@
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:text=""
         android:inputType="textEmailAddress" />
 
@@ -41,13 +46,16 @@
         android:textColor="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
         android:textSize="20dp"
         android:text="Password" />
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:text=""
         android:inputType="textPassword" />
 
@@ -59,7 +67,8 @@
         android:textColor="#ffffff"
         android:textSize="18dp"
         android:gravity="right"
-        android:text="Forget your password?" />
+        android:layout_marginRight="15dp"
+        android:text="@string/forgotPassword" />
 
     <Space
         android:layout_width="match_parent"
@@ -70,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:text="Login"
+        android:text=" Login "
         android:background="#babdbc"
         android:textColor="#ffffff"
         android:textSize="20dp"
@@ -86,7 +95,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:text="Log in with Facebook"
+        android:text="  Log in with Facebook  "
         android:background="#3b5998"
         android:textColor="#ffffff"
         android:textSize="20dp"
@@ -98,7 +107,7 @@
         android:layout_height="20dp" />
 
     <Button
-        android:text="Log in with Google"
+        android:text="  Log in with Google  "
         android:layout_gravity="center_vertical|center_horizontal"
         android:textColor="#ffffff"
         android:background="#db3236"
@@ -118,5 +127,5 @@
         android:textColor="#ffffff"
         android:textSize="18dp"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:text="Start your journey now!" />
+        android:text="@string/register" />
 </LinearLayout>
