@@ -12,7 +12,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="20dp" />
+        android:layout_height="50dp" />
 
 
     <ImageView
@@ -23,41 +23,48 @@
         android:layout_marginRight="15dp"
         android:id="@+id/imageView2" />
 
-    <TextView
-        android:id="@+id/label"
+    <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#ffffff"
-        android:layout_marginLeft="20dp"
-        android:textSize="20dp"
-        android:text="Email" />
+        android:layout_height="30dp" />
+
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+
 
     <EditText
         android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:text=""
+        android:background="#ffffff"
+        android:hint="Email"
         android:inputType="textEmailAddress" />
 
-    <TextView
-        android:id="@+id/label2"
-        android:textColor="#ffffff"
+    <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:textSize="20dp"
-        android:text="Password" />
+        android:layout_height="30dp" />
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:text=""
+        android:background="#ffffff"
+        android:hint="Password"
         android:inputType="textPassword" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
 
 
     <TextView
@@ -72,53 +79,66 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="20dp" />
+        android:layout_height="10dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="#0000"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:src="@drawable/ficon"
+            android:id="@+id/imageButton8"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/imageButton9"
+            android:layout_toStartOf="@+id/imageButton9" />
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="#0000"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:src="@drawable/google"
+            android:layout_marginRight="54dp"
+            android:layout_marginEnd="54dp"
+            android:id="@+id/imageButton9"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+
+    </RelativeLayout>
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:text=" Login "
+        android:text="Login"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
         android:background="#babdbc"
         android:textColor="#ffffff"
         android:textSize="20dp"
         tools:layout_editor_absoluteX="154dp"
         tools:layout_editor_absoluteY="214dp" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp" />
-
-    <Button
-        android:id="@+id/buttonF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:text="  Log in with Facebook  "
-        android:background="#3b5998"
-        android:textColor="#ffffff"
-        android:textSize="20dp"
-        tools:layout_editor_absoluteX="154dp"
-        tools:layout_editor_absoluteY="214dp" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="20dp" />
-
-    <Button
-        android:text="  Log in with Google  "
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:textColor="#ffffff"
-        android:background="#db3236"
-        android:textSize="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonG" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp" />
+        android:layout_height="10dp" />
 
     <TextView
         android:id="@+id/label"
@@ -126,6 +146,7 @@
         android:layout_height="wrap_content"
         android:textColor="#ffffff"
         android:textSize="18dp"
+        android:textStyle="bold"
         android:layout_gravity="center_vertical|center_horizontal"
         android:text="@string/register" />
 </LinearLayout>
