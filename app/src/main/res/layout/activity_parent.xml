@@ -23,7 +23,6 @@
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-
             <FrameLayout
                 android:id="@android:id/tabcontent"
                 android:layout_width="match_parent"
@@ -190,66 +189,10 @@
                         android:layout_height="wrap_content"
                         android:text="Blah"/>
 
-                    <TableLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
 
-                        <TableRow
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
 
-                        <TableRow
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
 
-                    </TableLayout>
 
-                    <Space
-                        android:layout_width="match_parent"
-                        android:layout_height="20dp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Help others"/>
-
-                    <TableLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TableRow
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-                        <TableRow
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-                    </TableLayout>
-
-                    <Space
-                        android:layout_width="match_parent"
-                        android:layout_height="20dp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Skills to integrate"/>
-
-                    <CheckBox
-                        android:id="@+id/checkBox6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Be Brave" />
-                    <CheckBox
-                        android:id="@+id/checkBox7"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Possitivity" />
-                    <CheckBox
-                        android:id="@+id/checkBox8"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Listen to others" />
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>
