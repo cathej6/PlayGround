@@ -3,7 +3,6 @@ package edu.washington.cathej.playground;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -14,6 +13,7 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -33,8 +33,12 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     private boolean newGameCreated;
 
     //increase to slow down difficulty progression, decrease to speed up difficulty progression
-    private int progressDenom = 20;
+    //private int progressDenom = 20;
     private Explosion explosion;
+    private ArrayList<Ball> balls;
+    private long ballStartTime;
+    private ArrayList<Bomb> bombs;
+    private long bombStartTime;
     private long startReset;
     private boolean reset;
     private boolean dissapear;
@@ -86,6 +90,8 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 
         bg = new Background(BitmapFactory.decodeResource(getResources(), R.drawable.grassbg1));
         player = new Player(BitmapFactory.decodeResource(getResources(), R.drawable.helicopter), 65, 25, 3);
+        balls = new ArrayList<Ball>();
+        bombs = new ArrayList<Bomb>();
 
         thread = new MainThread(getHolder(), this);
         //we can safely start the game loop
@@ -96,11 +102,13 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     @Override
     public boolean onTouchEvent(MotionEvent event)
     {
+
+
         if(event.getAction()==MotionEvent.ACTION_DOWN){
             if(!player.getPlaying() && newGameCreated && reset)
             {
                 player.setPlaying(true);
-                player.setUp(true);
+                player.setMoving(true);
             }
             if(player.getPlaying())
             {
@@ -108,13 +116,20 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
                     started = true;
                 }
                 reset = false;
-                player.setUp(true);
+                player.setMoving(true);
+            }
+            return true;
+        }
+        if(event.getAction()== MotionEvent.ACTION_MOVE) {
+            float x = event.getX();
+            if (x > 0) {
+                player.setNextX((int) (x));
             }
             return true;
         }
         if(event.getAction()==MotionEvent.ACTION_UP)
         {
-            player.setUp(false);
+            player.setMoving(false);
             return true;
         }
 
@@ -128,6 +143,44 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 
             bg.update();
             player.update();
+
+            //add balls on timer
+            long ballElapsed = (System.nanoTime()-ballStartTime)/1000000;
+            if(ballElapsed >(2000 - player.getScore()/4)){
+
+
+                //first ball always goes down the middle
+                if(balls.size() == 0) {
+                    balls.add(new Ball(BitmapFactory.decodeResource(getResources(),R.drawable.
+                            google), 1, WIDTH / 2, HEIGHT + 10, 45, 15, 10, 13));
+                } else {
+
+                    balls.add(new Ball(BitmapFactory.decodeResource(getResources(),R.drawable.google),
+                            2, (int)(rand.nextDouble() * (WIDTH)), HEIGHT + 10, 45, 15, 10, 13));
+                }
+
+                //reset timer
+                ballStartTime = System.nanoTime();
+            }
+            //loop through every ball and check collision and remove
+            for(int i = 0; i<balls.size();i++)
+            {
+                //update ball
+                balls.get(i).update();
+
+                if(collision(balls.get(i),player))
+                {
+                    balls.remove(i);
+                    player.setPlaying(false);
+                    break;
+                }
+                //remove ball if it is way off the screen
+                if(balls.get(i).getX()<-100)
+                {
+                    balls.remove(i);
+                    break;
+                }
+            }
 
         } else if (justLaunched) {
             newGame();
@@ -174,6 +227,15 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
                 player.draw(canvas);
             }
 
+            //draw balls
+            for(Ball ball: balls) {
+                ball.draw(canvas);
+            }
+            //draw bombs
+            for(Bomb bomb: bombs) {
+                bomb.draw(canvas);
+            }
+
             //draw explosion
             if(started)
             {
@@ -194,6 +256,9 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 
         player.resetDX();
         player.setY(HEIGHT/2);
+
+        balls.clear();
+        bombs.clear();
 
         if(player.getScore() > best)
         {

@@ -2,6 +2,7 @@ package edu.washington.cathej.playground;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.provider.Settings;
 
 /**
  * Created by catherinejohnson on 4/25/17.
@@ -11,10 +12,11 @@ public class Player extends GameObject{
 
     private Bitmap spritesheet;
     private int score;
-    private boolean up;
+    private boolean moving;
     private boolean playing;
     private Animation animation = new Animation();
     private long startTime;
+    private int newX;
 
     public Player(Bitmap res, int w, int h, int numFrames) {
 
@@ -24,6 +26,7 @@ public class Player extends GameObject{
         score = 0;
         height = h;
         width = w;
+        newX = 0;
 
         Bitmap[] image = new Bitmap[numFrames];
         spritesheet = res;
@@ -39,36 +42,15 @@ public class Player extends GameObject{
 
     }
 
-    public void setUp(boolean b){up = b;}
+    public void setNextX(int xThis) {
+        newX = xThis;
+    }
+
+    public void setMoving(boolean b){moving = b;}
 
     public void update()
     {
-        long elapsed = (System.nanoTime()-startTime)/1000000;
-        if(elapsed>100)
-        {
-            score++;
-            startTime = System.nanoTime();
-        }
-        animation.update();
-
-        if(up){
-            dx -= 1;
-        }
-        else{
-            dx += 1;
-        }
-
-        if(dx>14)dx = 14;
-        if(dx<-14)dx = -14;
-
-        x += dx * 1.1;
-
-        // Restricts the range the helicopter can go. In this case don't go off the screen!!!
-        if (x > GamePanel.WIDTH - 20) {
-            x = GamePanel.WIDTH - 20;
-        } else if (x < 0) {
-            x = 0;
-        }
+        x = newX;
     }
 
     public void draw(Canvas canvas)
@@ -80,4 +62,5 @@ public class Player extends GameObject{
     public void setPlaying(boolean b){playing = b;}
     public void resetDX(){dx = 0;}
     public void resetScore(){score = 0;}
+    public int getX() {return x;}
 }
