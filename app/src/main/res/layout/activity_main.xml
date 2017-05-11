@@ -8,9 +8,6 @@
     android:background="@drawable/background_h"
     tools:context="edu.washington.cathej.playground.MainActivity">
 
-
-
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
