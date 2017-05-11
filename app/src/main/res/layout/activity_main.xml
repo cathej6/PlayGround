@@ -5,37 +5,42 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#a0cb3d"
+    android:background="@drawable/backgroundH"
     tools:context="edu.washington.cathej.playground.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#ffffff"
-        android:text="Playground!" />
 
-    <Space
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="20dp" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/pMode"
-        android:layout_width="wrap_content"
-        android:background="#babdbc"
-        android:textColor="#ffffff"
-        android:layout_height="wrap_content"
-        android:text="Parent Mode" />
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="300dp"
+            android:background="#0000"
+            android:layout_marginTop="38dp"
+            android:id="@+id/button2"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="40dp" />
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="150dp"
+            android:background="#0000"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/button2"
+            android:layout_toStartOf="@+id/button2"
+            android:id="@+id/button3" />
 
-    <Button
-        android:id="@+id/cMode"
-        android:layout_width="wrap_content"
-        android:background="#babdbc"
-        android:textColor="#ffffff"
-        android:layout_height="wrap_content"
-        android:text="Ben" />
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="150dp"
+            android:background="#0000"
+            android:id="@+id/button4"
+            android:layout_alignBottom="@+id/button2"
+            android:layout_toRightOf="@+id/button2"
+            android:layout_toEndOf="@+id/button2" />
+    </RelativeLayout>
 
 </LinearLayout>
