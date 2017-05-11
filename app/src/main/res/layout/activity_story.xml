@@ -8,64 +8,110 @@
     tools:context="edu.washington.cathej.playground.StoryActivity">
     <FrameLayout
         android:id="@+id/imageContainer"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:background="@drawable/parent_b"
         android:layout_height="300dp">
 
     </FrameLayout>
 
-    <LinearLayout
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"/>
+
+
+    <RelativeLayout
         android:id="@+id/storyContainer"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@android:color/white"
+        android:layout_height="match_parent"
+        android:background="#a0cb3d"
         android:orientation="vertical">
+
 
         <TextView
             android:id="@+id/dialog"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:textSize="18dp" />
 
-        <LinearLayout
-            android:id="@+id/buttonSet1"
-            android:orientation="horizontal"
+        <Button
+            android:id="@+id/button1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/button1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button1" />
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button2" />
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:background="#0000"
+            android:textColor="#0091EA"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="Button1"
+            android:layout_alignBaseline="@+id/button2"
+            android:layout_alignBottom="@+id/button2"
+            android:layout_alignLeft="@+id/button3"
+            android:layout_alignStart="@+id/button3" />
 
-        <LinearLayout
-            android:id="@+id/buttonSet2"
-            android:orientation="horizontal"
+        <Button
+            android:id="@+id/button3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button3" />
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button4" />
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:text="Button3"
+            android:background="#0000"
+            android:textColor="#0091EA"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_above="@+id/continueStory"
+            android:layout_alignLeft="@+id/dialog"
+            android:layout_alignStart="@+id/dialog" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button2"
+            android:background="#0000"
+            android:textColor="#0091EA"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/dialog"
+            android:layout_alignRight="@+id/dialog"
+            android:layout_alignEnd="@+id/dialog"
+            android:layout_marginRight="12dp"
+            android:layout_marginEnd="12dp" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button4"
+            android:background="#0000"
+            android:textColor="#0091EA"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_above="@+id/continueStory"
+            android:layout_alignLeft="@+id/button2"
+            android:layout_alignStart="@+id/button2" />
 
         <Button
             android:id="@+id/continueStory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Continue" />
+            android:text="Continue"
+            android:background="#0000"
+            android:textColor="#0091EA"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/button4"
+            android:layout_alignStart="@+id/button4"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>
