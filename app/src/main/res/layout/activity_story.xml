@@ -10,7 +10,7 @@
         android:id="@+id/imageContainer"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:background="@drawable/parent_b"
+        android:background="@drawable/parentB"
         android:layout_height="300dp">
 
     </FrameLayout>
