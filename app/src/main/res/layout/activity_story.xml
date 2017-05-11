@@ -9,6 +9,7 @@
     <FrameLayout
         android:id="@+id/imageContainer"
         android:layout_width="match_parent"
+        android:background="@drawable/parent_b"
         android:layout_height="300dp">
 
     </FrameLayout>
@@ -16,16 +17,55 @@
     <LinearLayout
         android:id="@+id/storyContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
+        android:background="@android:color/white"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/buttonSet1"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button1" />
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonSet2"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button3" />
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button4" />
+        </LinearLayout>
 
         <Button
-            android:id="@+id/play"
-            android:layout_width="match_parent"
+            android:id="@+id/continueStory"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Play Game"
-            />
+            android:text="Continue" />
+
     </LinearLayout>
 
 </LinearLayout>
