@@ -15,6 +15,7 @@ import android.widget.TextView;
 import java.io.Serializable;
 
 import static android.R.attr.name;
+import static edu.washington.cathej.playground.R.id.button4;
 
 public class StoryActivity extends Activity implements View.OnClickListener {
 
@@ -83,31 +84,32 @@ public class StoryActivity extends Activity implements View.OnClickListener {
         StorySlide slide = storySlides[slideNumber];
         TextView dialogBox = (TextView) findViewById(R.id.dialog);
         Button continueStory = (Button) findViewById(R.id.continueStory);
-        LinearLayout buttonSet1 = (LinearLayout) findViewById(R.id.buttonSet1);
-        LinearLayout buttonSet2 = (LinearLayout) findViewById(R.id.buttonSet2);
+        Button button1 = (Button) findViewById(R.id.button1);
+        Button button2 = (Button) findViewById(R.id.button2);
+        Button button3 = (Button) findViewById(R.id.button3);
+        Button button4 = (Button) findViewById(R.id.button4);
+
 
         if (slide.type.equals("dialog")) {
-            buttonSet1.setVisibility(View.GONE);
-            buttonSet2.setVisibility(View.GONE);
+            button1.setVisibility(View.GONE);
+            button2.setVisibility(View.GONE);
+            button3.setVisibility(View.GONE);
+            button4.setVisibility(View.GONE);
             continueStory.setVisibility(View.VISIBLE);
 
             dialogBox.setText(slide.dialog[0] + " " + slide.dialog[1]);
 
         } else if (slide.type.equals("decision")) {
-            buttonSet1.setVisibility(View.VISIBLE);
             continueStory.setVisibility(View.GONE);
-
-            Button button1 = (Button) findViewById(R.id.button1);
-            Button button2 = (Button) findViewById(R.id.button2);
+            button1.setVisibility(View.VISIBLE);
+            button2.setVisibility(View.VISIBLE);
             button1.setText(slide.buttons[0]);
             button2.setText(slide.buttons[1]);
             dialogBox.setText(slide.dialog[0]);
 
             if (slide.buttons.length == 4) {
-                buttonSet2.setVisibility(View.VISIBLE);
-
-                Button button3 = (Button) findViewById(R.id.button3);
-                Button button4 = (Button) findViewById(R.id.button4);
+                button3.setVisibility(View.VISIBLE);
+                button4.setVisibility(View.VISIBLE);
                 button3.setText(slide.buttons[2]);
                 button4.setText(slide.buttons[3]);
             }
