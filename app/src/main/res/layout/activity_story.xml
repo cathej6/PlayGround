@@ -10,7 +10,7 @@
         android:id="@+id/imageContainer"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:background="@drawable/parentB"
+        android:background="@drawable/Decsion1"
         android:layout_height="300dp">
 
     </FrameLayout>
@@ -19,7 +19,7 @@
     <View
         android:layout_width="fill_parent"
         android:layout_height="3dp"
-        android:background="#ffffff"/>
+        android:background="#999999"/>
 
 
     <RelativeLayout
