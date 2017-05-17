@@ -12,9 +12,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TabHost;
 
-import static android.os.Build.VERSION_CODES.M;
-import static edu.washington.cathej.playground.R.drawable.lbg;
-
 public class ParentActivity extends Activity {
 
     @Override
