@@ -48,7 +48,7 @@
                         android:layout_marginStart="27dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/lbgreen" />
+                        android:src="@drawable/lb_green" />
 
                     <ImageView
                         android:id="@+id/lbg"
@@ -63,7 +63,7 @@
                         android:layout_marginStart="27dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/lbg"
+                        android:src="@drawable/lb_grey"
                         android:visibility="gone" />
 
 
@@ -80,7 +80,7 @@
                         android:layout_marginTop="56dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/lmgreen" />
+                        android:src="@drawable/lm_green" />
 
                     <ImageView
                         android:id="@+id/lmg"
@@ -95,7 +95,7 @@
                         android:layout_marginTop="56dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/lmg"
+                        android:src="@drawable/lm_grey"
                         android:visibility="gone" />
 
 
@@ -111,7 +111,7 @@
                         android:layout_marginBottom="47dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ltgreen" />
+                        android:src="@drawable/lt_green" />
 
                     <ImageView
                         android:id="@+id/ltg"
@@ -124,7 +124,7 @@
                         android:layout_marginBottom="47dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ltg" />
+                        android:src="@drawable/lt_grey" />
 
 
                     <ImageView
@@ -140,7 +140,7 @@
                         android:layout_marginTop="31dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/rtgreen" />
+                        android:src="@drawable/rt_green" />
 
                     <ImageView
                         android:id="@+id/rtg"
@@ -155,7 +155,7 @@
                         android:layout_marginTop="31dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/rtg" />
+                        android:src="@drawable/rt_grey" />
 
 
                     <ImageView
@@ -171,7 +171,7 @@
                         android:layout_marginTop="102dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/rb" />
+                        android:src="@drawable/rb_green" />
 
                     <Button
                         android:id="@+id/lbbutton"
@@ -249,7 +249,7 @@
                         android:layout_marginStart="27dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/lbgreen" />
+                        android:src="@drawable/lb_green" />
 
                     <ImageView
                         android:id="@+id/lbg2"
@@ -264,7 +264,7 @@
                         android:layout_marginStart="27dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/lbg"
+                        android:src="@drawable/lb_grey"
                         android:visibility="gone" />
 
 
@@ -281,7 +281,7 @@
                         android:layout_marginTop="56dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/lmgreen" />
+                        android:src="@drawable/lm_green" />
 
                     <ImageView
                         android:id="@+id/lmg2"
@@ -296,7 +296,7 @@
                         android:layout_marginTop="56dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/lmg"
+                        android:src="@drawable/lm_grey"
                         android:visibility="gone" />
 
 
@@ -312,7 +312,7 @@
                         android:layout_marginBottom="47dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ltgreen" />
+                        android:src="@drawable/lt_green" />
 
                     <ImageView
                         android:id="@+id/ltg2"
@@ -325,7 +325,7 @@
                         android:layout_marginBottom="47dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ltg"
+                        android:src="@drawable/lt_grey"
                         android:visibility="gone" />
 
 
@@ -342,7 +342,7 @@
                         android:layout_marginTop="31dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/rtgreen" />
+                        android:src="@drawable/rt_green" />
 
                     <ImageView
                         android:id="@+id/rtg2"
@@ -357,7 +357,7 @@
                         android:layout_marginTop="31dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/rtg" />
+                        android:src="@drawable/rt_grey" />
 
 
                     <ImageView
@@ -373,7 +373,7 @@
                         android:layout_marginTop="102dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/rb" />
+                        android:src="@drawable/rb_green" />
 
 
                     <Button
@@ -451,7 +451,7 @@
                         android:layout_marginStart="27dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/lbgreen" />
+                        android:src="@drawable/lb_green" />
 
                     <ImageView
                         android:id="@+id/lbg3"
@@ -466,7 +466,7 @@
                         android:layout_marginStart="27dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/lbg"
+                        android:src="@drawable/lb_grey"
                         android:visibility="gone" />
 
 
@@ -483,7 +483,7 @@
                         android:layout_marginTop="56dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/lmgreen" />
+                        android:src="@drawable/lm_green" />
 
                     <ImageView
                         android:id="@+id/lmg3"
@@ -498,7 +498,7 @@
                         android:layout_marginTop="56dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/lmg"
+                        android:src="@drawable/lm_grey"
                         android:visibility="gone" />
 
 
@@ -514,7 +514,7 @@
                         android:layout_marginBottom="47dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ltgreen" />
+                        android:src="@drawable/lt_green" />
 
                     <ImageView
                         android:id="@+id/ltg3"
@@ -527,7 +527,7 @@
                         android:layout_marginBottom="47dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ltg" />
+                        android:src="@drawable/lt_grey" />
 
 
 
@@ -544,7 +544,7 @@
                         android:layout_marginTop="31dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/rtgreen" />
+                        android:src="@drawable/rt_green" />
 
                     <ImageView
                         android:id="@+id/rtg3"
@@ -559,7 +559,7 @@
                         android:layout_marginTop="31dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/rtg"
+                        android:src="@drawable/rt_grey"
                         android:visibility="gone" />
 
 
@@ -576,7 +576,7 @@
                         android:layout_marginTop="102dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/rb" />
+                        android:src="@drawable/rb_green" />
 
                     <Button
                         android:id="@+id/lbbutton3"
