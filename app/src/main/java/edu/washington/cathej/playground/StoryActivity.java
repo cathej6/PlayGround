@@ -101,6 +101,9 @@ public class StoryActivity extends Activity implements View.OnClickListener {
 
         } else if (slide.type.equals("decision")) {
             continueStory.setVisibility(View.GONE);
+            button3.setVisibility(View.GONE);
+            button4.setVisibility(View.GONE);
+
             button1.setVisibility(View.VISIBLE);
             button2.setVisibility(View.VISIBLE);
             button1.setText(slide.buttons[0]);
