@@ -11,49 +11,39 @@ import java.util.Random;
  */
 
 public class Bomb extends GameObject {
-    private int score;
     private int speed;
     private Random rand = new Random();
-    private Bitmap spritesheet;
-    private long startTime;
-    private Animation animation = new Animation();
+    private Bitmap image;
 
-    public Bomb(Bitmap res, int x, int y, int w, int h, int s, int numFrames) {
+    public Bomb(Bitmap res, int x, int y, int w, int h, int numFrames) {
         super.x = x;
         super.y = y;
-        super.width = w;
-        super.height = h;
-        score = s;
+        super.width = res.getWidth();
+        super.height = res.getHeight();
 
-        speed = 7 + (int) (rand.nextDouble() * score / 30);
+        speed = 7 + (int) (rand.nextDouble() + 10);
 
         // Max missle speed.
         if(speed > 40) {
             speed = 40;
         }
 
-        Bitmap[] image = new Bitmap[numFrames];
-        spritesheet = res;
-
-        for (int i = 0; i < image.length; i++)
-        {
-            image[i] = Bitmap.createBitmap(spritesheet, i * width, 0, width, height);
-        }
-
-        animation.setFrames(image);
-        animation.setDelay(10);
-        startTime = System.nanoTime();
+        image = res;
     }
 
     public void update() {
-        y -= speed;
-        animation.update();
+        y += speed;
     }
 
     public void draw(Canvas canvas) {
         try {
-            canvas.drawBitmap(animation.getImage(), x, y, null);
+            canvas.drawBitmap(image, x, y, null);
         } catch (Exception e) {
         }
+    }
+
+    @Override
+    public int getWidth() {
+        return width - 10;
     }
 }

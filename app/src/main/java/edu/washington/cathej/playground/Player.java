@@ -10,57 +10,48 @@ import android.provider.Settings;
 
 public class Player extends GameObject{
 
-    private Bitmap spritesheet;
+    private Bitmap image;
     private int score;
     private boolean moving;
     private boolean playing;
-    private Animation animation = new Animation();
-    private long startTime;
     private int newX;
+    private int centeringFactor;
 
     public Player(Bitmap res, int w, int h, int numFrames) {
+        height = 2;
+        width = res.getWidth();
+        centeringFactor = - width / 2 - 20;
 
-        x = GamePanel.WIDTH / 2;
-        y = GamePanel.HEIGHT * 2 - 10;
+        x = GamePanel.WIDTH / 2 + centeringFactor;
+        y = GamePanel.HEIGHT - 100;
         dx = 0;
         score = 0;
-        height = h;
-        width = w;
-        newX = 0;
-
-        Bitmap[] image = new Bitmap[numFrames];
-        spritesheet = res;
-
-        for (int i = 0; i < image.length; i++)
-        {
-            image[i] = Bitmap.createBitmap(spritesheet, i*width, 0, width, height);
-        }
-
-        animation.setFrames(image);
-        animation.setDelay(10);
-        startTime = System.nanoTime();
-
+        image = res;
     }
 
-    public void setNextX(int xThis) {
-        newX = xThis;
-    }
-
-    public void setMoving(boolean b){moving = b;}
 
     public void update()
     {
         x = newX;
     }
 
+    public void setNextX(int xThis) {
+        newX = xThis + centeringFactor;
+    }
+
+    public void addToScore(int points) {
+        score += points;
+    }
+
+    public void setMoving(boolean b){moving = b;}
+    public boolean getMoving() {return moving;}
+
     public void draw(Canvas canvas)
     {
-        canvas.drawBitmap(animation.getImage(),x,y,null);
+        canvas.drawBitmap(image, x, y, null);
     }
     public int getScore(){return score;}
     public boolean getPlaying(){return playing;}
     public void setPlaying(boolean b){playing = b;}
-    public void resetDX(){dx = 0;}
     public void resetScore(){score = 0;}
-    public int getX() {return x;}
 }
