@@ -177,54 +177,59 @@
                         android:id="@+id/lbbutton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/ltbutton"
+                        android:layout_alignStart="@+id/ltbutton"
+                        android:layout_alignTop="@+id/rtgreen"
+                        android:layout_marginTop="44dp"
                         android:background="#0000"
                         android:text="Friendship Building"
-                        android:layout_marginTop="44dp"
-                        android:layout_alignTop="@+id/rtgreen"
-                        android:layout_alignLeft="@+id/ltbutton"
-                        android:layout_alignStart="@+id/ltbutton" />
+                        android:textColor="#0D8A43" />
 
                     <Button
                         android:id="@+id/rtbutton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="#0000"
-                        android:text="Helping Others"
                         android:layout_alignBaseline="@+id/lbbutton"
                         android:layout_alignBottom="@+id/lbbutton"
+                        android:layout_alignEnd="@+id/rtgreen"
                         android:layout_alignRight="@+id/rtgreen"
-                        android:layout_alignEnd="@+id/rtgreen" />
+                        android:background="#0000"
+                        android:text="Helping Others"
+                        android:textColor="#A1A3A1" />
 
                     <Button
                         android:id="@+id/ltbutton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="#0000"
-                        android:text="Bravery"
                         android:layout_alignBottom="@+id/lbgreen"
                         android:layout_alignLeft="@+id/lmgreen"
                         android:layout_alignStart="@+id/lmgreen"
-                        android:layout_marginBottom="47dp" />
+                        android:layout_marginBottom="47dp"
+                        android:background="#0000"
+                        android:text="Bravery"
+                        android:textColor="#A1A3A1" />
 
                     <Button
                         android:id="@+id/lmbutton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="#0000"
-                        android:text="Positivity"
                         android:layout_alignBottom="@+id/ltgreen"
                         android:layout_alignLeft="@+id/lmgreen"
                         android:layout_alignStart="@+id/lmgreen"
-                        android:layout_marginBottom="40dp" />
+                        android:layout_marginBottom="40dp"
+                        android:background="#0000"
+                        android:text="Positivity"
+                        android:textColor="#0D8A43" />
 
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_alignEnd="@+id/rtgreen"
+                        android:layout_alignRight="@+id/rtgreen"
+                        android:layout_centerVertical="true"
                         android:background="#0000"
                         android:text="Sharing"
-                        android:layout_centerVertical="true"
-                        android:layout_alignRight="@+id/rtgreen"
-                        android:layout_alignEnd="@+id/rtgreen" />
+                        android:textColor="#0D8A43" />
 
                 </RelativeLayout>
 
