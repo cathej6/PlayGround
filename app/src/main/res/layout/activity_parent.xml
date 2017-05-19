@@ -63,8 +63,7 @@
                         android:layout_marginStart="27dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/lb_grey"
-                        android:visibility="gone" />
+                        android:src="@drawable/lb_grey" />
 
 
                     <ImageView
@@ -155,7 +154,8 @@
                         android:layout_marginTop="31dp"
                         android:background="#0000"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/rt_grey" />
+                        android:src="@drawable/rt_grey"
+                        android:visibility="gone" />
 
 
                     <ImageView
@@ -183,7 +183,7 @@
                         android:layout_marginTop="44dp"
                         android:background="#0000"
                         android:text="Friendship Building"
-                        android:textColor="#0D8A43" />
+                        android:textColor="#A1A3A1" />
 
                     <Button
                         android:id="@+id/rtbutton"
@@ -195,7 +195,7 @@
                         android:layout_alignRight="@+id/rtgreen"
                         android:background="#0000"
                         android:text="Helping Others"
-                        android:textColor="#A1A3A1" />
+                        android:textColor="#0D8A43" />
 
                     <Button
                         android:id="@+id/ltbutton"
@@ -390,7 +390,8 @@
                         android:layout_alignStart="@+id/lmgreen2"
                         android:layout_marginLeft="16dp"
                         android:layout_marginStart="16dp"
-                        android:layout_marginTop="46dp" />
+                        android:layout_marginTop="46dp"
+                        android:textColor="#0D8A43"/>
 
                     <Button
                         android:id="@+id/rtbutton2"
@@ -401,7 +402,8 @@
                         android:layout_alignBaseline="@+id/lbbutton2"
                         android:layout_alignBottom="@+id/lbbutton2"
                         android:layout_alignRight="@+id/rtgreen2"
-                        android:layout_alignEnd="@+id/rtgreen2" />
+                        android:layout_alignEnd="@+id/rtgreen2"
+                        android:textColor="#A1A3A1" />
 
                     <Button
                         android:id="@+id/ltbutton2"
@@ -412,7 +414,8 @@
                         android:layout_alignBottom="@+id/lbgreen2"
                         android:layout_alignLeft="@+id/lmgreen2"
                         android:layout_alignStart="@+id/lmgreen2"
-                        android:layout_marginBottom="47dp" />
+                        android:layout_marginBottom="47dp"
+                        android:textColor="#0D8A43" />
 
                     <Button
                         android:id="@+id/lmbutton2"
@@ -423,7 +426,8 @@
                         android:layout_alignBottom="@+id/ltgreen2"
                         android:layout_alignLeft="@+id/lmgreen2"
                         android:layout_alignStart="@+id/lmgreen2"
-                        android:layout_marginBottom="40dp" />
+                        android:layout_marginBottom="40dp"
+                        android:textColor="#0D8A43" />
 
                     <Button
                         android:layout_width="wrap_content"
@@ -432,7 +436,8 @@
                         android:text="Sharing"
                         android:layout_centerVertical="true"
                         android:layout_alignRight="@+id/rtgreen2"
-                        android:layout_alignEnd="@+id/rtgreen2" />
+                        android:layout_alignEnd="@+id/rtgreen2"
+                        android:textColor="#0D8A43" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -592,7 +597,8 @@
                         android:layout_alignStart="@+id/lmgreen3"
                         android:layout_marginLeft="16dp"
                         android:layout_marginStart="16dp"
-                        android:layout_marginTop="46dp" />
+                        android:layout_marginTop="46dp"
+                        android:textColor="#0D8A43" />
 
                     <Button
                         android:id="@+id/rtbutton3"
@@ -603,7 +609,8 @@
                         android:layout_alignBaseline="@+id/lbbutton3"
                         android:layout_alignBottom="@+id/lbbutton3"
                         android:layout_alignRight="@+id/rtgreen3"
-                        android:layout_alignEnd="@+id/rtgreen3" />
+                        android:layout_alignEnd="@+id/rtgreen3"
+                        android:textColor="#0D8A43" />
 
                     <Button
                         android:id="@+id/ltbutton3"
@@ -614,7 +621,8 @@
                         android:layout_alignBottom="@+id/lbgreen3"
                         android:layout_alignLeft="@+id/lmgreen3"
                         android:layout_alignStart="@+id/lmgreen3"
-                        android:layout_marginBottom="47dp" />
+                        android:layout_marginBottom="47dp"
+                        android:textColor="#A1A3A1" />
 
                     <Button
                         android:id="@+id/lmbutton3"
@@ -625,7 +633,8 @@
                         android:layout_alignBottom="@+id/ltgreen3"
                         android:layout_alignLeft="@+id/lmgreen3"
                         android:layout_alignStart="@+id/lmgreen3"
-                        android:layout_marginBottom="40dp" />
+                        android:layout_marginBottom="40dp"
+                        android:textColor="#0D8A43" />
 
                     <Button
                         android:layout_width="wrap_content"
@@ -634,7 +643,8 @@
                         android:text="Sharing"
                         android:layout_centerVertical="true"
                         android:layout_alignRight="@+id/rtgreen3"
-                        android:layout_alignEnd="@+id/rtgreen3" />
+                        android:layout_alignEnd="@+id/rtgreen3"
+                        android:textColor="#0D8A43" />
                 </RelativeLayout>
             </FrameLayout>
         </LinearLayout>
