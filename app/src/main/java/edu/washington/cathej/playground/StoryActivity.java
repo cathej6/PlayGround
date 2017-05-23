@@ -3,12 +3,14 @@ package edu.washington.cathej.playground;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -16,20 +18,39 @@ import java.io.Serializable;
 
 import static android.R.attr.name;
 import static edu.washington.cathej.playground.R.id.button4;
+import static edu.washington.cathej.playground.R.id.imageContainer;
 
 public class StoryActivity extends Activity implements View.OnClickListener {
 
     private SharedPreferences sharedPreferences;
     private int slideNumber;
+
+    private int criticalDecision = 0;
+
     private StorySlide[] storySlides = {
             new StorySlide("dialog", new String[] {"Ben: What’s up?",
-                      "Kathy: We’re going to play kickball, what to join?"}, null),
+                      "Kathy: We’re going to play kickball, what to join?"},
+                    null, R.drawable.play),
             new StorySlide("decision", new String[] {"Want to join?"},
-                    new String[] {"Yes, Play", "No"}),
+                    new String[] {"Yes, Play", "No"}, R.drawable.play),
             new StorySlide("dialog", new String[] {"(See kid get pushed down)",
-                    "Kid: Ow!"}, null),
+                    "Kid: Ow!"}, null, R.drawable.hurt),
             new StorySlide("decision", new String[] {"What should I do?"},
-                    new String[] {"Confront Bully", "Get Teacher", "Help Kid", "Do Nothing"})
+                    new String[] {"Confront Bully", "Get Teacher", "Help Kid", "Do Nothing"},
+                    R.drawable.decision),
+            new StorySlide("dialog", new String[] {"Mom: Hi sweetheart, how was school today?", ""},
+                    null, R.drawable.hurt),
+            new StorySlide("dialog", new String[] {"Ben: A kid got pushed on the play ground.",
+                    "Mom: Oh no, what did you do?"},
+                    null, R.drawable.hurt),
+            new StorySlide("dialog", new String[] {"Ben: Nothing, I didn’t know what to do.", ""},
+                    null, R.drawable.hurt),
+            new StorySlide("dialog", new String[] {"Mom: Sometimes it can be hard to do the right " +
+                    "thing, people get scared. Even I have been scared. But you must try to be brave " +
+                    "and stick up for anyone who gets hurt, by helping them up or going to a teacher for help.", ""},
+                    null, R.drawable.hurt),
+            new StorySlide("dialog", new String[] {"Ben: Thanks Mom", ""},
+                    null, R.drawable.hurt)
     };
 
     @Override
@@ -45,6 +66,7 @@ public class StoryActivity extends Activity implements View.OnClickListener {
         Button button2 = (Button) findViewById(R.id.button2);
         Button button3 = (Button) findViewById(R.id.button3);
         Button button4 = (Button) findViewById(R.id.button4);
+
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
@@ -62,7 +84,7 @@ public class StoryActivity extends Activity implements View.OnClickListener {
 
         Button thisButton = (Button) v;
 
-        if (slideNumber == 4) {
+        if (slideNumber == storySlides.length) {
             editor.putInt("slideNumber", 0);
             editor.commit();
             Log.i("story", "Completed Story! Rseting story back to beginning");
@@ -84,11 +106,13 @@ public class StoryActivity extends Activity implements View.OnClickListener {
         StorySlide slide = storySlides[slideNumber];
         TextView dialogBox = (TextView) findViewById(R.id.dialog);
         Button continueStory = (Button) findViewById(R.id.continueStory);
+        FrameLayout imageContainer = (FrameLayout) findViewById(R.id.imageContainer);
+
         Button button1 = (Button) findViewById(R.id.button1);
         Button button2 = (Button) findViewById(R.id.button2);
         Button button3 = (Button) findViewById(R.id.button3);
         Button button4 = (Button) findViewById(R.id.button4);
-
+        imageContainer.setBackgroundResource(slide.imageId);
 
         if (slide.type.equals("dialog")) {
             button1.setVisibility(View.GONE);
@@ -124,13 +148,17 @@ public class StoryActivity extends Activity implements View.OnClickListener {
         public String type;
         public String[] dialog;
         public String[] buttons;
+        public int imageId;
+
 
 
         // constructor to set tip
-        public StorySlide(String type, String[] description, String[] buttons){
+        public StorySlide(String type, String[] description, String[] buttons,
+                          int imageId){
             this.type = type;
             this.dialog = description;
             this.buttons = buttons;
+            this.imageId = imageId;
         }
     }
 }

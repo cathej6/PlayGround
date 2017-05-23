@@ -9,7 +9,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="10dp" />
+        android:layout_height="170dp" />
 
     <edu.washington.cathej.playground.PinEntryEditText
         android:id="@+id/txt_pin_entry"
@@ -26,14 +26,6 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="140dp" />
-
-    <Button
-        android:id="@+id/submit"
-        android:text="Submit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="8dp" />
 
 
 </LinearLayout>

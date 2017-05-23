@@ -1,6 +1,7 @@
 package edu.washington.cathej.playground;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
@@ -40,25 +41,10 @@ public class ParentActivity extends Activity {
         host.addTab(spec);
 
 
-        // Branch buttons.
-        Button lb = (Button) findViewById(R.id.lbbutton);
-        Button rt = (Button) findViewById(R.id.rtbutton);
-        Button lt = (Button) findViewById(R.id.ltbutton);
-        Button lm = (Button) findViewById(R.id.lmbutton);
-
-        Button lb2 = (Button) findViewById(R.id.lbbutton2);
-        Button rt2 = (Button) findViewById(R.id.rtbutton2);
-        Button lt2 = (Button) findViewById(R.id.ltbutton2);
-        Button lm2 = (Button) findViewById(R.id.lmbutton2);
-
-        Button lb3 = (Button) findViewById(R.id.lbbutton3);
-        Button rt3 = (Button) findViewById(R.id.rtbutton3);
-        Button lt3 = (Button) findViewById(R.id.ltbutton3);
-        Button lm3 = (Button) findViewById(R.id.lmbutton3);
-
-        onClick1(lb, rt, lt, lm);
-        onClick2(lb2, rt2, lt2, lm2);
-        onClick3(lb3, rt3, lt3, lm3);
+        // Branch buttons
+        onClick1();
+        onClick2();
+        onClick3();
 
     }
 
@@ -99,7 +85,11 @@ public class ParentActivity extends Activity {
     }
 
 
-    public void onClick1(Button lb, Button rt, Button lt, Button lm) {
+    public void onClick1() {
+        final Button lb = (Button) findViewById(R.id.lbbutton);
+        final Button rt = (Button) findViewById(R.id.rtbutton);
+        final Button lt = (Button) findViewById(R.id.ltbutton);
+        final Button lm = (Button) findViewById(R.id.lmbutton);
 
         lb.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,8 +97,10 @@ public class ParentActivity extends Activity {
                 ImageView gImage = (ImageView) findViewById(R.id.lbg);
                 if (gImage.getVisibility() == View.GONE) {
                     gImage.setVisibility(View.VISIBLE);
+                    lb.setTextColor(Color.parseColor("#A1A3A1"));
                 } else {
                     gImage.setVisibility(View.GONE);
+                    lb.setTextColor(Color.parseColor("#0D8A43"));
                 }
             }
         });
@@ -119,8 +111,10 @@ public class ParentActivity extends Activity {
                 ImageView gImage = (ImageView) findViewById(R.id.rtg);
                 if (gImage.getVisibility() == View.GONE) {
                     gImage.setVisibility(View.VISIBLE);
+                    rt.setTextColor(Color.parseColor("#A1A3A1"));
                 } else {
                     gImage.setVisibility(View.GONE);
+                    rt.setTextColor(Color.parseColor("#0D8A43"));
                 }
             }
         });
@@ -131,8 +125,10 @@ public class ParentActivity extends Activity {
                 ImageView gImage = (ImageView) findViewById(R.id.ltg);
                 if (gImage.getVisibility() == View.GONE) {
                     gImage.setVisibility(View.VISIBLE);
+                    lt.setTextColor(Color.parseColor("#A1A3A1"));
                 } else {
                     gImage.setVisibility(View.GONE);
+                    lt.setTextColor(Color.parseColor("#0D8A43"));
                 }
             }
         });
@@ -143,14 +139,20 @@ public class ParentActivity extends Activity {
                 ImageView gImage = (ImageView) findViewById(R.id.lmg);
                 if (gImage.getVisibility() == View.GONE) {
                     gImage.setVisibility(View.VISIBLE);
+                    lm.setTextColor(Color.parseColor("#A1A3A1"));
                 } else {
                     gImage.setVisibility(View.GONE);
+                    lm.setTextColor(Color.parseColor("#0D8A43"));
                 }
             }
         });
     }
 
-    public void onClick2(Button lb2, Button rt2, Button lt2, Button lm2) {
+    public void onClick2() {
+        final Button lb2 = (Button) findViewById(R.id.lbbutton2);
+        final Button rt2 = (Button) findViewById(R.id.rtbutton2);
+        final Button lt2 = (Button) findViewById(R.id.ltbutton2);
+        final Button lm2 = (Button) findViewById(R.id.lmbutton2);
 
         lb2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,8 +160,10 @@ public class ParentActivity extends Activity {
                 ImageView gImage = (ImageView) findViewById(R.id.lbg2);
                 if (gImage.getVisibility() == View.GONE) {
                     gImage.setVisibility(View.VISIBLE);
+                    lb2.setTextColor(Color.parseColor("#A1A3A1"));
                 } else {
                     gImage.setVisibility(View.GONE);
+                    lb2.setTextColor(Color.parseColor("#0D8A43"));
                 }
             }
         });
@@ -170,8 +174,10 @@ public class ParentActivity extends Activity {
                 ImageView gImage = (ImageView) findViewById(R.id.rtg2);
                 if (gImage.getVisibility() == View.GONE) {
                     gImage.setVisibility(View.VISIBLE);
+                    rt2.setTextColor(Color.parseColor("#A1A3A1"));
                 } else {
                     gImage.setVisibility(View.GONE);
+                    rt2.setTextColor(Color.parseColor("#0D8A43"));
                 }
             }
         });
@@ -182,8 +188,10 @@ public class ParentActivity extends Activity {
                 ImageView gImage = (ImageView) findViewById(R.id.ltg2);
                 if (gImage.getVisibility() == View.GONE) {
                     gImage.setVisibility(View.VISIBLE);
+                    lt2.setTextColor(Color.parseColor("#A1A3A1"));
                 } else {
                     gImage.setVisibility(View.GONE);
+                    lt2.setTextColor(Color.parseColor("#0D8A43"));
                 }
             }
         });
@@ -194,22 +202,31 @@ public class ParentActivity extends Activity {
                 ImageView gImage = (ImageView) findViewById(R.id.lmg2);
                 if (gImage.getVisibility() == View.GONE) {
                     gImage.setVisibility(View.VISIBLE);
+                    lm2.setTextColor(Color.parseColor("#A1A3A1"));
                 } else {
                     gImage.setVisibility(View.GONE);
+                    lm2.setTextColor(Color.parseColor("#0D8A43"));
                 }
             }
         });
     }
 
-    public void onClick3(Button lb3, Button rt3, Button lt3, Button lm3) {
+    public void onClick3() {
+        final Button lb3 = (Button) findViewById(R.id.lbbutton3);
+        final Button rt3 = (Button) findViewById(R.id.rtbutton3);
+        final Button lt3 = (Button) findViewById(R.id.ltbutton3);
+        final Button lm3 = (Button) findViewById(R.id.lmbutton3);
+
         lb3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ImageView gImage = (ImageView) findViewById(R.id.lbg3);
                 if (gImage.getVisibility() == View.GONE) {
                     gImage.setVisibility(View.VISIBLE);
+                    lb3.setTextColor(Color.parseColor("#A1A3A1"));
                 } else {
                     gImage.setVisibility(View.GONE);
+                    lb3.setTextColor(Color.parseColor("#0D8A43"));
                 }
             }
         });
@@ -220,8 +237,10 @@ public class ParentActivity extends Activity {
                 ImageView gImage = (ImageView) findViewById(R.id.rtg3);
                 if (gImage.getVisibility() == View.GONE) {
                     gImage.setVisibility(View.VISIBLE);
+                    rt3.setTextColor(Color.parseColor("#A1A3A1"));
                 } else {
                     gImage.setVisibility(View.GONE);
+                    rt3.setTextColor(Color.parseColor("#0D8A43"));
                 }
             }
         });
@@ -232,8 +251,10 @@ public class ParentActivity extends Activity {
                 ImageView gImage = (ImageView) findViewById(R.id.ltg3);
                 if (gImage.getVisibility() == View.GONE) {
                     gImage.setVisibility(View.VISIBLE);
+                    lt3.setTextColor(Color.parseColor("#A1A3A1"));
                 } else {
                     gImage.setVisibility(View.GONE);
+                    lt3.setTextColor(Color.parseColor("#0D8A43"));
                 }
             }
         });
@@ -244,8 +265,10 @@ public class ParentActivity extends Activity {
                 ImageView gImage = (ImageView) findViewById(R.id.lmg3);
                 if (gImage.getVisibility() == View.GONE) {
                     gImage.setVisibility(View.VISIBLE);
+                    lm3.setTextColor(Color.parseColor("#A1A3A1"));
                 } else {
                     gImage.setVisibility(View.GONE);
+                    lm3.setTextColor(Color.parseColor("#0D8A43"));
                 }
             }
         });
