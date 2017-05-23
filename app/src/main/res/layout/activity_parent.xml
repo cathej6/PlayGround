@@ -411,7 +411,6 @@
                         android:layout_height="wrap_content"
                         android:background="#0000"
                         android:text="Bravery"
-                        android:textColor="#0D8A43"
                         android:layout_alignBottom="@+id/lbgreen2"
                         android:layout_alignLeft="@+id/lmgreen2"
                         android:layout_alignStart="@+id/lmgreen2"
