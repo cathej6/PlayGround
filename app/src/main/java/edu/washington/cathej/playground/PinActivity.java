@@ -39,21 +39,13 @@ public class PinActivity extends Activity {
                 if (s.toString().equals("1234")) {
                     Toast.makeText(PinActivity.this,
                             "Success", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(PinActivity.this, ParentActivity.class);
+                    PinActivity.this.startActivity(intent);
                 } else if (s.length() == "1234".length()) {
                     Toast.makeText(PinActivity.this,
                             "Incorrect", Toast.LENGTH_SHORT).show();
                     txtPinEntry.setText(null);
                 }
-            }
-        });
-
-        Button submit = (Button) findViewById(R.id.submit);
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.i("button", "Text updated.");
-                Intent intent = new Intent(PinActivity.this, ParentActivity.class);
-                PinActivity.this.startActivity(intent);
             }
         });
 

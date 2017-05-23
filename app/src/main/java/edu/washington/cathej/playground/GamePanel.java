@@ -1,7 +1,10 @@
 package edu.washington.cathej.playground;
 
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
@@ -44,6 +47,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 
     //increase to slow down difficulty progression, decrease to speed up difficulty progression
     private int progressDenom = 20;
+    private boolean popup = false;
 
     private Explosion explosion;
     private long startReset;
@@ -102,7 +106,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         bombs = new ArrayList<Bomb>();
         bombStartTime = System.nanoTime();
 
-        thread = new MainThread(getHolder(), this);
+        thread = new MainThread(context, getHolder(), this);
         //we can safely start the game loop
         thread.setRunning(true);
         thread.start();
@@ -237,6 +241,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
             if(resetElapsed > 1500 && !newGameCreated)
             {
                 newGame();
+                popup = true;
             }
         }
 
@@ -350,5 +355,14 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         Ringtone r = RingtoneManager.getRingtone(context, notification);
         r.play();
+    }
+
+
+    public boolean popup() {
+        return popup;
+    }
+
+    public void turnOffPopup() {
+        popup = false;
     }
 }

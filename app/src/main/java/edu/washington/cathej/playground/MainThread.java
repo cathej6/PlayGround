@@ -1,5 +1,9 @@
 package edu.washington.cathej.playground;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
 
@@ -15,9 +19,11 @@ public class MainThread extends Thread {
     private GamePanel gamePanel;
     private boolean running;
     public static Canvas canvas;
+    public Context context;
 
-    public MainThread(SurfaceHolder surfaceHolder, GamePanel gamePanel) {
+    public MainThread(Context context, SurfaceHolder surfaceHolder, GamePanel gamePanel) {
         super();
+        this.context = context;
         this.surfaceHolder = surfaceHolder;
         this.gamePanel = gamePanel;
 
@@ -32,6 +38,7 @@ public class MainThread extends Thread {
         long totalTime = 0;
         int frameCount =0;
         long targetTime = 1000/FPS;
+        boolean disablePopup = false;
 
         while(running) {
             startTime = System.nanoTime();
@@ -41,8 +48,34 @@ public class MainThread extends Thread {
             try {
                 canvas = this.surfaceHolder.lockCanvas();
                 synchronized (surfaceHolder) {
-                    this.gamePanel.update();
-                    this.gamePanel.draw(canvas);
+                    if(this.gamePanel.popup()) {
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+                        // 2. Chain together various setter methods to set the dialog characteristics
+                        builder.setMessage("")
+                                .setTitle("Want to play again?");
+
+                        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // Do nothing keep playing
+                                //disablePopup = true;
+                            }
+                        });
+                        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Intent intent = new Intent(context, StoryActivity.class);
+                                context.startActivity(intent);
+                            }
+                        });
+
+                        // 3. Get the AlertDialog from create()
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
+                    } else {
+                        this.gamePanel.update();
+                        this.gamePanel.draw(canvas);
+                    }
                 }
             } catch (Exception e) {
                 e.printStackTrace();

@@ -38,18 +38,18 @@ public class StoryActivity extends Activity implements View.OnClickListener {
             new StorySlide("decision", new String[] {"What should I do?"},
                     new String[] {"Confront Bully", "Get Teacher", "Help Kid", "Do Nothing"},
                     R.drawable.decision),
-            new StorySlide("dialog", new String[] {"Mom: Hi sweetheart, how was school today?"},
+            new StorySlide("dialog", new String[] {"Mom: Hi sweetheart, how was school today?", ""},
                     null, R.drawable.hurt),
             new StorySlide("dialog", new String[] {"Ben: A kid got pushed on the play ground.",
                     "Mom: Oh no, what did you do?"},
                     null, R.drawable.hurt),
-            new StorySlide("dialog", new String[] {"Ben: Nothing, I didn’t know what to do."},
+            new StorySlide("dialog", new String[] {"Ben: Nothing, I didn’t know what to do.", ""},
                     null, R.drawable.hurt),
             new StorySlide("dialog", new String[] {"Mom: Sometimes it can be hard to do the right " +
                     "thing, people get scared. Even I have been scared. But you must try to be brave " +
-                    "and stick up for anyone who gets hurt, by helping them up or going to a teacher for help."},
+                    "and stick up for anyone who gets hurt, by helping them up or going to a teacher for help.", ""},
                     null, R.drawable.hurt),
-            new StorySlide("dialog", new String[] {"Ben: Thanks Mom"},
+            new StorySlide("dialog", new String[] {"Ben: Thanks Mom", ""},
                     null, R.drawable.hurt)
     };
 
