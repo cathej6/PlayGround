@@ -24,6 +24,9 @@ public class StoryActivity extends Activity implements View.OnClickListener {
 
     private SharedPreferences sharedPreferences;
     private int slideNumber;
+
+    private int criticalDecision = 0;
+
     private StorySlide[] storySlides = {
             new StorySlide("dialog", new String[] {"Ben: What’s up?",
                       "Kathy: We’re going to play kickball, what to join?"},
@@ -34,7 +37,20 @@ public class StoryActivity extends Activity implements View.OnClickListener {
                     "Kid: Ow!"}, null, R.drawable.hurt),
             new StorySlide("decision", new String[] {"What should I do?"},
                     new String[] {"Confront Bully", "Get Teacher", "Help Kid", "Do Nothing"},
-                    R.drawable.decision)
+                    R.drawable.decision),
+            new StorySlide("dialog", new String[] {"Mom: Hi sweetheart, how was school today?"},
+                    null, R.drawable.hurt),
+            new StorySlide("dialog", new String[] {"Ben: A kid got pushed on the play ground.",
+                    "Mom: Oh no, what did you do?"},
+                    null, R.drawable.hurt),
+            new StorySlide("dialog", new String[] {"Ben: Nothing, I didn’t know what to do."},
+                    null, R.drawable.hurt),
+            new StorySlide("dialog", new String[] {"Mom: Sometimes it can be hard to do the right " +
+                    "thing, people get scared. Even I have been scared. But you must try to be brave " +
+                    "and stick up for anyone who gets hurt, by helping them up or going to a teacher for help."},
+                    null, R.drawable.hurt),
+            new StorySlide("dialog", new String[] {"Ben: Thanks Mom"},
+                    null, R.drawable.hurt)
     };
 
     @Override
@@ -68,7 +84,7 @@ public class StoryActivity extends Activity implements View.OnClickListener {
 
         Button thisButton = (Button) v;
 
-        if (slideNumber == 4) {
+        if (slideNumber == storySlides.length) {
             editor.putInt("slideNumber", 0);
             editor.commit();
             Log.i("story", "Completed Story! Rseting story back to beginning");
