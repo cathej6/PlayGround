@@ -48,7 +48,7 @@ public class MainThread extends Thread {
             try {
                 canvas = this.surfaceHolder.lockCanvas();
                 synchronized (surfaceHolder) {
-                    if(this.gamePanel.popup()) {
+                    /*if(this.gamePanel.popup()) {
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(context);
 
@@ -72,10 +72,10 @@ public class MainThread extends Thread {
                         // 3. Get the AlertDialog from create()
                         AlertDialog dialog = builder.create();
                         dialog.show();
-                    } else {
+                    } else {*/
                         this.gamePanel.update();
                         this.gamePanel.draw(canvas);
-                    }
+                    //}
                 }
             } catch (Exception e) {
                 e.printStackTrace();

@@ -30,4 +30,11 @@ public class MiniGameActivity extends Activity {
         Intent objIntent = new Intent(this, PlayAudio.class);
         stopService(objIntent);
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(MiniGameActivity.this, MapActivity.class);
+        MiniGameActivity.this.startActivity(intent);
+    }
 }

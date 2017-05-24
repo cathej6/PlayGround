@@ -8,16 +8,19 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.io.Serializable;
 
 import static android.R.attr.name;
 import static edu.washington.cathej.playground.R.id.button4;
+import static edu.washington.cathej.playground.R.id.dialog;
 import static edu.washington.cathej.playground.R.id.imageContainer;
 
 public class StoryActivity extends Activity implements View.OnClickListener {
@@ -25,7 +28,7 @@ public class StoryActivity extends Activity implements View.OnClickListener {
     private SharedPreferences sharedPreferences;
     private int slideNumber;
 
-    private int criticalDecision = 0;
+    private int impactDecision = 0;
 
     private StorySlide[] storySlides = {
             new StorySlide("dialog", new String[] {"Ben: What’s up?",
@@ -43,11 +46,17 @@ public class StoryActivity extends Activity implements View.OnClickListener {
             new StorySlide("dialog", new String[] {"Ben: A kid got pushed on the play ground.",
                     "Mom: Oh no, what did you do?"},
                     null, R.drawable.hurt),
-            new StorySlide("dialog", new String[] {"Ben: Nothing, I didn’t know what to do.", ""},
+            new StorySlide("impact", new String[] {"Ben: I caught the bully and pushed him.",
+                    "Ben: I got the teacher!", "Ben: I help her up, she was hurt.",
+                    "Ben: Nothing, I didn’t know what to do."},
                     null, R.drawable.hurt),
-            new StorySlide("dialog", new String[] {"Mom: Sometimes it can be hard to do the right " +
+            new StorySlide("impact", new String[] {"Mom: Honey that's not nice. You could have really hurt him." +
+                    "While it's good to stick up to bullies you should never hurt them.",
+                    "Mom: Great job! That's exactly what you're suppose to do.",
+                    "Mom: That's so sweet of you, I bet you made her feel better.",
+                    "Mom: Sometimes it can be hard to do the right " +
                     "thing, people get scared. Even I have been scared. But you must try to be brave " +
-                    "and stick up for anyone who gets hurt, by helping them up or going to a teacher for help.", ""},
+                    "and stick up for anyone who gets hurt, by helping them up or going to a teacher for help."},
                     null, R.drawable.hurt),
             new StorySlide("dialog", new String[] {"Ben: Thanks Mom", ""},
                     null, R.drawable.hurt)
@@ -76,8 +85,21 @@ public class StoryActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        slideNumber++;
         SharedPreferences.Editor editor = sharedPreferences.edit();
+        if (storySlides[slideNumber].type.equals("decision"))  {
+            if (v.getId() == R.id.button1) {
+                editor.putInt("impactDecision", 0);
+            } else if (v.getId() == R.id.button2) {
+                editor.putInt("impactDecision", 1);
+            } else if (v.getId() == R.id.button3) {
+                editor.putInt("impactDecision", 2);
+            } else if (v.getId() == R.id.button4) {
+                editor.putInt("impactDecision", 3);
+            }
+            editor.commit();
+        }
+
+        slideNumber++;
         editor.putInt("slideNumber", slideNumber);
         editor.commit();
         Log.i("story", "New slide number of " + slideNumber);
@@ -104,7 +126,7 @@ public class StoryActivity extends Activity implements View.OnClickListener {
         slideNumber = sharedPreferences.getInt("slideNumber", 0);
 
         StorySlide slide = storySlides[slideNumber];
-        TextView dialogBox = (TextView) findViewById(R.id.dialog);
+        TextView dialogBox = (TextView) findViewById(dialog);
         Button continueStory = (Button) findViewById(R.id.continueStory);
         FrameLayout imageContainer = (FrameLayout) findViewById(R.id.imageContainer);
 
@@ -140,7 +162,31 @@ public class StoryActivity extends Activity implements View.OnClickListener {
                 button3.setText(slide.buttons[2]);
                 button4.setText(slide.buttons[3]);
             }
+        } else if (slide.type.equals("impact")) {
+            impactDecision = sharedPreferences.getInt("impactDecision", 0);
+            button1.setVisibility(View.GONE);
+            button2.setVisibility(View.GONE);
+            button3.setVisibility(View.GONE);
+            button4.setVisibility(View.GONE);
+            continueStory.setVisibility(View.VISIBLE);
+
+            dialogBox.setText(slide.dialog[impactDecision]);
         }
+
+        int height = dialogBox.getHeight();
+        int newMargin =  220;
+
+        if (height > 100) {
+            newMargin = 0;
+        }
+
+        setMargins(continueStory, newMargin);
+    }
+
+    public static void setMargins (View v, int t) {
+        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)v.getLayoutParams();
+        params.setMargins(500, t, 0, 0); //substitute parameters for left, top, right, bottom
+        v.setLayoutParams(params);
     }
 
     public class StorySlide implements Serializable {

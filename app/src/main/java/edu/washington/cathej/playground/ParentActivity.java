@@ -274,4 +274,11 @@ public class ParentActivity extends Activity {
         });
     }
 
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(ParentActivity.this, MainActivity.class);
+        ParentActivity.this.startActivity(intent);
+    }
+
 }
