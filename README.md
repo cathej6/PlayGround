@@ -19,4 +19,4 @@ Our team aims to solve the problem that many parents are very busy at work, so t
   
 ## Major technology decisions ##
 * After doing some research into different educational applications out there we have decided to go with a mobile application for our product, because our application design of mini games and small stories makes it ideal for a mobile application where you only have a few minutes in between activities to explore the game.
-* We will most likely be developing our application for Android devices. In addition we will most likely use the platform version Lollipop (5.0-5.1) while also taking advantage of the latest APIs (see [here](http://https://developer.android.com/about/dashboards/index.html) for source) to create our functional gaming application. 
+* We will most likely be developing our application for Android devices. In addition we will most likely use the platform version Lollipop (5.0-5.1) while also taking advantage of the latest APIs (see [here](https://developer.android.com/about/dashboards/index.html) for source) to create our functional gaming application. 
