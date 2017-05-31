@@ -17,18 +17,20 @@ public class Ball extends GameObject{
     private Random rand = new Random();
     private Bitmap image;
 
-    public Ball(Bitmap res, int x, int y, int w, int h, int p, int numFrames) {
+    public Ball(Bitmap res, int x, int y, int w, int h, int p, int speed) {
         super.x = x;
         super.y = y;
         super.width = res.getWidth();
         super.height = res.getHeight();
         points = p;
+        this.speed = speed;
 
-        speed = 5 + rand.nextInt(points / 5);
-
-        // Max missle speed.
-        if(speed > 40) {
-            speed = 40;
+        if (speed == 0) {
+            this.speed = 5 + rand.nextInt(points / 5);
+            // Max missle speed.
+            if (this.speed > 40) {
+                this.speed = 40;
+            }
         }
 
         image = res;
@@ -52,5 +54,9 @@ public class Ball extends GameObject{
 
     public int getPoints() {
         return points;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
     }
 }

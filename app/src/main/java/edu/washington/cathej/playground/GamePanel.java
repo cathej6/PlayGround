@@ -14,6 +14,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -56,6 +57,8 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     private boolean started;
     private int best;
     private boolean justLaunched;
+    private long songStartTime;
+    private MediaPlayer mediaPlayer;
 
 
     public GamePanel(Context context)
@@ -67,6 +70,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         best = sharedPreferences.getInt("best", 0);
 
         justLaunched = true;
+        mediaPlayer = MediaPlayer.create(context, R.raw.game_b);
         //add the callback to the surfaceholder to intercept events
         getHolder().addCallback(this);
 
@@ -150,6 +154,11 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     public void update()
 
     {
+        long songElapse = (System.nanoTime() - songStartTime) / 1000000000;
+        if (justLaunched || songElapse > 12000) {
+            mediaPlayer.start();
+        }
+
         if(player.getPlaying()) {
 
             bg.update();
@@ -159,31 +168,32 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
             //add balls on timer
             long ballElapsed = (System.nanoTime()-ballStartTime)/1000000;
             if(ballElapsed >(2000 - player.getScore()/4)){
-
-                int ballType = rand.nextInt(2);
+                int ballType = rand.nextInt(3);
                 if (ballType == 0) {
-
                     balls.add(new Ball(BitmapFactory.decodeResource(getResources(), R.drawable.ball1),
-                            (int) (rand.nextDouble() * (WIDTH - 150)), -150, 45, 15, 30, 13));
-                } else {
+                            (int) (rand.nextDouble() * (WIDTH - 150)), -150, 45, 15, 30, 0));
+                } else if(ballType == 1) {
                     balls.add(new Ball(BitmapFactory.decodeResource(getResources(), R.drawable.ball2),
-                            (int) (rand.nextDouble() * (WIDTH - 150)), -150, 45, 15, 50, 13));
+                            (int) (rand.nextDouble() * (WIDTH - 150)), -150, 45, 15, 50, 0));
+                } else {
+                    balls.add(new Ball(BitmapFactory.decodeResource(getResources(), R.drawable.ball3),
+                            (int) (rand.nextDouble() * (WIDTH - 150)), -150, 45, 15, 80, 20));
                 }
 
                 //reset timer
                 ballStartTime = System.nanoTime();
             }
             //loop through every ball and check collision and remove
-            for(int i = 0; i<balls.size();i++)
+            for(int i = 0; i < balls.size();i++)
             {
                 //update ball
                 balls.get(i).update();
 
-                if(collision(balls.get(i),player))
+                if(collision(balls.get(i), player))
                 {
-                    balls.remove(i);
                     player.addToScore(balls.get(i).getPoints());
-                    playSound();
+                    balls.remove(i);
+                    playSound("beep");
                 }
                 //remove ball if it is way off the screen
                 if(balls.get(i).getY() >= HEIGHT + 100)
@@ -194,7 +204,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 
             //add bombs on timer
             long bombElapsed = (System.nanoTime()-bombStartTime)/1000000;
-            if(bombElapsed >(10000 - player.getScore()/4)){
+            if(bombElapsed >(6000 - player.getScore()/2)){
                 bombs.add(new Bomb(BitmapFactory.decodeResource(getResources(),R.drawable.bomb),
                         (int)(rand.nextDouble()*(WIDTH - 150)), -150, 45, 15, 13));
 
@@ -213,6 +223,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
                 {
                     bombs.remove(i);
                     player.setPlaying(false);
+                    playSound("bomb");
                     break;
                 }
                 //remove ball if it is way off the screen
@@ -351,10 +362,18 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         return list;
     }
 
-    public void playSound() {
-        Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        Ringtone r = RingtoneManager.getRingtone(context, notification);
-        r.play();
+    public void playSound(String sound) {
+        MediaPlayer mediaPlayer;
+        if (sound.equals("beep")) {
+            mediaPlayer = MediaPlayer.create(context, R.raw.beep);
+        } else {
+            mediaPlayer = MediaPlayer.create(context, R.raw.bomb);
+        }
+        mediaPlayer.start();
+//
+//        Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+//        Ringtone r = RingtoneManager.getRingtone(context, notification);
+//        r.play();
     }
 
 

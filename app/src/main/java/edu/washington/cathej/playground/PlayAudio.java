@@ -18,7 +18,7 @@ public class PlayAudio extends Service {
     public void onCreate(){
         super.onCreate();
         Log.d(LOGCAT, "Service Started!");
-        objPlayer = MediaPlayer.create(this,R.raw.up);
+        setAudio("up");
     }
 
     public int onStartCommand(Intent intent, int flags, int startId){
@@ -43,6 +43,18 @@ public class PlayAudio extends Service {
     public void onDestroy(){
         objPlayer.stop();
         objPlayer.release();
+    }
+
+    public void setAudio(String file) {
+        if (file.equals("up")) {
+            objPlayer = MediaPlayer.create(this,R.raw.up);
+        } else if (file.equals("game_b")) {
+            objPlayer = MediaPlayer.create(this, R.raw.game_b);
+        } else if (file.equals("beep")) {
+            objPlayer = MediaPlayer.create(this,R.raw.beep);
+        } else if (file.equals("bomb")) {
+            objPlayer = MediaPlayer.create(this,R.raw.bomb);
+        }
     }
 
     @Override

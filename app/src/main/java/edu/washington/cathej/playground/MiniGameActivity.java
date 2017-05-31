@@ -18,17 +18,25 @@ public class MiniGameActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(new GamePanel(this));
-        playAudio(null);
+        //playAudio(null);
+       // MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.up);
+        //mediaPlayer.start();
     }
+//
+//    public void playAudio(View view) {
+//        Intent objIntent = new Intent(this, PlayAudio.class);
+//        startService(objIntent);
+//    }
+//
+//    public void stopAudio(View view) {
+//        Intent objIntent = new Intent(this, PlayAudio.class);
+//        stopService(objIntent);
+//    }
 
-    public void playAudio(View view) {
-        Intent objIntent = new Intent(this, PlayAudio.class);
-        startService(objIntent);
-    }
-
-    public void stopAudio(View view) {
-        Intent objIntent = new Intent(this, PlayAudio.class);
-        stopService(objIntent);
+    @Override
+    public void onPause() {
+        super.onPause();
+        //stopAudio(null);
     }
 
     @Override

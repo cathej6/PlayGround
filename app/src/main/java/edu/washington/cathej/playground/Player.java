@@ -18,7 +18,7 @@ public class Player extends GameObject{
     private int centeringFactor;
 
     public Player(Bitmap res, int w, int h, int numFrames) {
-        height = 2;
+        height = 30;
         width = res.getWidth();
         centeringFactor = - width / 2 - 20;
 

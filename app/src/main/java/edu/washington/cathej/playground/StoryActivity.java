@@ -42,14 +42,14 @@ public class StoryActivity extends Activity implements View.OnClickListener {
                     new String[] {"Confront Bully", "Get Teacher", "Help Kid", "Do Nothing"},
                     R.drawable.decision),
             new StorySlide("dialog", new String[] {"Mom: Hi sweetheart, how was school today?", ""},
-                    null, R.drawable.hurt),
+                    null, R.drawable.home),
             new StorySlide("dialog", new String[] {"Ben: A kid got pushed on the play ground.",
                     "Mom: Oh no, what did you do?"},
-                    null, R.drawable.hurt),
+                    null, R.drawable.home),
             new StorySlide("impact", new String[] {"Ben: I caught the bully and pushed him.",
                     "Ben: I got the teacher!", "Ben: I help her up, she was hurt.",
                     "Ben: Nothing, I didn’t know what to do."},
-                    null, R.drawable.hurt),
+                    null, R.drawable.home),
             new StorySlide("impact", new String[] {"Mom: Honey that's not nice. You could have really hurt him." +
                     "While it's good to stick up to bullies you should never hurt them.",
                     "Mom: Great job! That's exactly what you're suppose to do.",
@@ -57,9 +57,9 @@ public class StoryActivity extends Activity implements View.OnClickListener {
                     "Mom: Sometimes it can be hard to do the right " +
                     "thing, people get scared. Even I have been scared. But you must try to be brave " +
                     "and stick up for anyone who gets hurt, by helping them up or going to a teacher for help."},
-                    null, R.drawable.hurt),
+                    null, R.drawable.home),
             new StorySlide("dialog", new String[] {"Ben: Thanks Mom", ""},
-                    null, R.drawable.hurt)
+                    null, R.drawable.home)
     };
 
     @Override

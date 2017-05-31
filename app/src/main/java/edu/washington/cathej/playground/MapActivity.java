@@ -31,4 +31,11 @@ public class MapActivity extends Activity implements View.OnClickListener {
         Intent intent = new Intent(MapActivity.this, StoryActivity.class);
         MapActivity.this.startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(MapActivity.this, MainActivity.class);
+        MapActivity.this.startActivity(intent);
+    }
 }
